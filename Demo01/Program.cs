@@ -111,9 +111,9 @@
 
             #region VAlue type casting
             ///1. implicit casting (safe casting)
-            int X = 5;
-            long Y = X; // implicit casting from int to long
-            Y = 777_373_896_547; // assign a long literal to Y
+            //int X = 5;
+            //long Y = X; // implicit casting from int to long
+            //Y = 777_373_896_547; // assign a long literal to Y
 
             ///2. explicit casting (unsafe casting)
             //X = (int)Y; // explicit casting from long to int, may cause data loss if Y is greater than int.MaxValue
