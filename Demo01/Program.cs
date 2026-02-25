@@ -311,6 +311,245 @@ namespace Demo01
             //string result = string.Format("Equation : {0} + {1} = {2}",x,y,(x+y)); // string.Format method
             //string result = $"Equation : {x} + {y} = {x+y}"; // string interpolation
             #endregion
+
+            #region Conditional Statment
+            #region Ex01
+            #region if
+            //Console.WriteLine("insert number of month in first qurter of year:");
+            //int month;
+            //if (int.TryParse(Console.ReadLine(), out month))
+            //{
+            //    //not recommended as it is not readable
+            //    //Console.WriteLine(
+            //    //month == 1 ? "January" :(month == 2 ? "February" :(month == 3 ? "March" : "invalid month number")));
+
+            //    //if (month == 1)
+            //    //    Console.WriteLine("January");
+            //    //else if (month == 2)
+            //    //    Console.WriteLine("February");
+            //    //else if (month == 3)
+            //    //    Console.WriteLine("March");
+            //    //else
+            //    //    Console.WriteLine("invalid input for month");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("invalid input for month");
+            //}
+            #endregion
+            #region switch
+            //Console.WriteLine("insert number of month in first qurter of year:");
+            //int month;
+            //if (int.TryParse(Console.ReadLine(), out month))
+            //{
+            //    /// jump table is created for switch statement with cases 1, 2, 3 and default case
+            //    switch (month)
+            //    {
+            //        case 1:
+            //            Console.WriteLine("January");
+            //            break;
+            //        case 2:
+            //            Console.WriteLine("February");
+            //            break;
+            //        case 3:
+            //            Console.WriteLine("March");
+            //            break;
+            //        default:
+            //            Console.WriteLine("invalid input for month");
+            //            break;
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("invalid input for month");
+            //}
+            #endregion
+            #endregion
+            #region Ex02
+            //int salary;
+            //if (int.TryParse(Console.ReadLine(), out salary))
+            //{
+            //    //switch (salary)
+            //    //{
+            //    //    case 3000:
+            //    //        Console.WriteLine("option 03");
+            //    //        Console.WriteLine("option 02");
+            //    //        Console.WriteLine("option 01");
+            //    //        break;
+            //    //    case 2000:
+            //    //        Console.WriteLine("option 02");
+            //    //        Console.WriteLine("option 01");
+            //    //        break;
+            //    //    case 1000:
+            //    //        Console.WriteLine("option 01");
+            //    //        break;
+            //    //    default:
+            //    //        Console.WriteLine("can not do any option");
+            //    //        break;
+            //    //}
+
+            //    switch (salary)
+            //    {
+            //        case 3000:
+            //            Console.WriteLine("option 03");
+            //            //Console.WriteLine("option 02");
+            //            //Console.WriteLine("option 01");
+            //            //break;
+            //            goto case 2000; // jump to case 2000
+            //        case 2000:
+            //            Console.WriteLine("option 02");
+            //            //Console.WriteLine("option 01");
+            //            //break;
+            //            goto case 1000; // jump to case 1000
+            //        case 1000:
+            //            Console.WriteLine("option 01");
+            //            break;
+            //        default:
+            //            Console.WriteLine("can not do any option");
+            //            break;
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("invalid input");
+            //}
+            #endregion
+            #region Calculater
+            // take number then opration then number and show result
+            //calculator do (+ - * / %)
+            //write program to do that and make it protictive
+            //int num1, num2;
+            //char opr;
+            //Console.WriteLine("Enter first number:");
+            //if (!int.TryParse(Console.ReadLine(), out num1)) //! true = false || ! false = true
+            //    Console.WriteLine("invalid format for first number");
+
+            //Console.WriteLine("Enter opration (+ - * / %):");
+            //if (!(char.TryParse(Console.ReadLine(), out opr) && (opr == '+' || opr == '-' || opr == '*' || opr == '/' || opr == '%')))
+            //    Console.WriteLine("invalid format for opration");
+
+            //Console.WriteLine("Enter last number:");
+            //if (!int.TryParse(Console.ReadLine(), out num2)) //! true = false || ! false = true
+            //    Console.WriteLine("invalid format for last number");
+
+            /////jump table is created for switch statement with cases +, -, *, /, % and default case
+            //switch (opr)
+            //{
+            //    case '+':
+            //        Console.WriteLine("result: " + (num1 + num2));
+            //        break;
+            //    case '-':
+            //        Console.WriteLine("result: " + (num1 - num2));
+            //        break;
+            //    case '*':
+            //        Console.WriteLine("result: " + (num1 * num2));
+            //        break;
+            //    case '/':
+            //        if (num2 != 0)
+            //            Console.WriteLine("result: " + ((double)num1 / num2));
+            //        else
+            //            Console.WriteLine("can not divide by zero");
+            //        break;
+            //    case '%':
+            //        if (num2 != 0)
+            //            Console.WriteLine("result: " + (num1 % num2));
+            //        else
+            //            Console.WriteLine("can not divide by zero");
+            //        break;
+            //        //default: //there is no need for default case as we have already validated the opration input but it is added here for completeness
+            //        //    Console.WriteLine("invalid opration");
+            //        //    break;
+            //}
+            #endregion
+            #endregion
+
+            #region Loops Statment
+            // print numbers from 1 to 10
+            //Console.WriteLine("1");
+            //Console.WriteLine("2");
+            //Console.WriteLine("3");
+            //Console.WriteLine("4");
+            //Console.WriteLine("5");
+            //Console.WriteLine("6");
+            //Console.WriteLine("7");
+            //Console.WriteLine("8");
+            //Console.WriteLine("9");
+            //Console.WriteLine("10");
+
+            #region For
+            /// for(insilization; condtion; increment | decrement)
+            ///  body
+            ///  
+            /// 1. insilization
+            /// 2. check condtion
+            /// 3. if condition true => do body code
+            /// 4. increment | decrement
+            /// 5. check condtion
+            /// 6. if condition true => do body code
+            /// 7. increment | decrement
+
+            //for(int i = 1; i <= 10; i++) // ++i; //i += 1 //i = i + 1
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //int i = 1; // insilization
+            //for (; ; )
+            //{
+            //    if (i <= 10) // condition
+            //    {
+            //        if (i % 2 == 0)
+            //        {
+            //            i++; // increment
+            //            continue; // skip the rest of the loop body and go to the next iteration
+            //        }
+            //        Console.WriteLine(i); // body
+            //        i++; // increment
+            //    }
+            //    else
+            //        break; // exit the loop
+            //}
+
+            #endregion
+
+            #region while
+            //Console.WriteLine("insert 0 if you want to Continue");
+            //string input = Console.ReadLine();
+            //while (input == "0")
+            //{
+            //    Console.WriteLine("hello");
+            //    Console.WriteLine("insert 0 if you want to continue or any key if you want to exit");
+            //    input = Console.ReadLine();
+            //}
+
+            ///while(reader.read())
+            ///{
+            ///   do some code to read data from reader
+            /// }
+
+            //int num1, num2;
+            //char opr;
+            //while (true)
+            //{
+            //    Console.WriteLine("Enter first number:");
+            //    while (!int.TryParse(Console.ReadLine(), out num1)) //! true = false || ! false = true
+            //        Console.WriteLine("wrong foramt, Enter first number");
+
+            //    Console.WriteLine("Enter opration (+ - * / %):");
+            //    while (!(char.TryParse(Console.ReadLine(), out opr) && (opr == '+' || opr == '-' || opr == '*' || opr == '/' || opr == '%')))
+            //        Console.WriteLine("wrong foramt, Enter opration (+ - * / %):");
+
+            //    Console.WriteLine("Enter last number:");
+            //    while (!int.TryParse(Console.ReadLine(), out num2)) //! true = false || ! false = true
+            //        Console.WriteLine("wrong foramt, Enter last number");
+
+            //    var result = 0;
+            //    Console.WriteLine($"Eqution: {num1} {opr} {num2} = {result}");
+            //    Console.WriteLine("////////////////////////////////////////////////////////");
+            //}
+            #endregion
+
+            #endregion
         }
     }
 }
