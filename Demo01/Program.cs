@@ -549,6 +549,200 @@ namespace Demo01
             //}
             #endregion
 
+            #region do while
+            //for (int i = 11; i <= 10; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //int i = 11;
+            //do
+            //{
+            //    Console.WriteLine(i);
+            //    i++;
+            //}while (i <= 10);
+            #endregion
+
+            #region foreach
+            //string text = Console.ReadLine();
+
+            //for (int i = 0; i < text.Length; i++)
+            //{
+            //    Console.WriteLine(text[i]);
+            //}
+
+            ///// collections
+            //foreach (char item in text)
+            //    Console.WriteLine(item);
+
+            //List<string> names = new List<string>()
+            //{
+            //    "ali",
+            //    "ahmed",
+            //    "sara"
+            //};
+
+            //for (int i = 0; i < names.Count; i++) //with collection to edit
+            //{
+            //    names[i] += "hello";
+            //}
+
+            //vs
+
+            //foreach (string name in names)
+            //    name += "hello"; //not valid //for display
+            #endregion
+
+            #region EX00
+            #region phas 01
+            //int num1, num2;
+            //char opr;
+            //double result;
+            //Console.WriteLine("Enter first number:");
+            //if (!int.TryParse(Console.ReadLine(), out num1)) //! true = false || ! false = true
+            //{
+            //    Console.WriteLine("invalid format for first number");
+            //    return;
+            //}
+            //Console.WriteLine("Enter opration (+ - * / %):");
+            //if (!(char.TryParse(Console.ReadLine(), out opr) && (opr == '+' || opr == '-' || opr == '*' || opr == '/' || opr == '%')))
+            //{
+            //    Console.WriteLine("invalid format for opration");
+            //    return;
+            //}
+            //Console.WriteLine("Enter last number:");
+            //if (!int.TryParse(Console.ReadLine(), out num2)) //! true = false || ! false = true
+            //{
+            //    Console.WriteLine("invalid format for last number");
+            //    return;
+            //}
+            //else if ((opr == '/' || opr == '%') && num2 == 0)
+            //{
+            //    Console.WriteLine("can not divide by zero");
+            //    return;
+            //}
+            /////jump table is created for switch statement with cases +, -, *, /, % and default case
+            //switch (opr)
+            //{
+            //    case '+': result = num1 + num2; break;
+            //    case '-': result = num1 - num2; break;
+            //    case '*': result = num1 * num2; break;
+            //    case '/': result = (double)num1 / num2; break;
+            //    case '%': result = num1 % num2; break;
+            //    default: return;
+            //}
+            //Console.WriteLine($"{num1} {opr} {num2} = {result}");
+            #endregion
+
+            #region phas 02
+            //int num1, num2;
+            //char opr;
+            //double result;
+            //do
+            //{
+            //    Console.WriteLine("Enter first number:");
+            //    while (!int.TryParse(Console.ReadLine(), out num1))
+            //    {
+            //        Console.WriteLine("wrong format, Enter first number:");
+            //    }
+
+            //    Console.WriteLine("Enter opration (+ - * / %):");
+            //    while (!(char.TryParse(Console.ReadLine(), out opr) && (opr == '+' || opr == '-' || opr == '*' || opr == '/' || opr == '%')))
+            //    {
+            //        Console.WriteLine("wrong format, Enter opration (+ - * / %):");
+            //    }
+
+            //    Console.WriteLine("Enter last number:");
+            //    while (!int.TryParse(Console.ReadLine(), out num2) || ((opr == '/' || opr == '%') && num2 == 0))
+            //    {
+            //        Console.WriteLine($"wrong format, Enter last number {(opr == '/' || opr == '%' ? "and make sure not be zero" : "")}:");
+            //    }
+            //    ///jump table is created for switch statement with cases +, -, *, /, % and default case
+            //    switch (opr)
+            //    {
+            //        case '+': result = num1 + num2; break;
+            //        case '-': result = num1 - num2; break;
+            //        case '*': result = num1 * num2; break;
+            //        case '/': result = (double)num1 / num2; break;
+            //        case '%': result = num1 % num2; break;
+            //        default: return;
+            //    }
+            //    Console.WriteLine($"{num1} {opr} {num2} = {result}");
+            //    Console.WriteLine("******************************************************");
+            //    Console.WriteLine("if you want to do anthor operation enter 'y' or press any key to exit");
+            //} while ((Console.ReadLine()).ToLower() == "y");
+            #endregion
+            #endregion
+            #endregion
+
+            #region Block scope
+            //for (int i = 0; i <= 10; i++)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //Console.WriteLine(i); // out of scope
+
+            //while (!double.TryParse(Console.ReadLine(), out double x))
+            //{
+            //    Console.WriteLine(x);
+            //}
+            //x = 3; // out of scope
+
+            ////double y;
+            //if (!double.TryParse(Console.ReadLine(), out double y))
+            //{
+            //    int z = 0;
+            //    Console.WriteLine(y);
+            //}
+            //y = 3;
+            //z = 3; // out of scope
+            //int x= 0;
+            //{ int z = 0; x = 1; }
+            //{ int z = 0; x = 2; }
+            #endregion
+
+            #region Arrays
+            #region one D Array
+            //int[] numbers;
+            // Declare for Reference from Type "Array of Integrs"
+            // Refering to the default value of Reference Type = NULL
+            // CLR Will Allocate 4 Bytes for The Reference at STACK
+            // CLR Will Allocate Zero Bytes at HEAP  
+
+            //numbers = new int[5];
+            // CLR Allocate 20 Bytes at HEAP,
+            // Intiailized with the default value of int = 0
+            // make reference refer on first element in object of array
+
+            //int[] numbers1 = { 1, 2, 3, 4, 5 };
+            //int[] numbers2 = new int[5] { 1, 2, 3, 4, 5 };
+            //int[] numbers3 = new int[] { 1, 2, 3, 4, 5 };
+
+            //numbers[0] = 1;
+            //numbers[4] = 2; // size - 1
+            //numbers[5] = 3; // not valid // runtime error
+
+            //Console.WriteLine($"the size of array = {numbers.Length} , the number of dimensions = {numbers.Rank} ");
+
+            //write a program with protictive code to read elemnts of array from user
+            //then print all elements
+            //int[] numbers = new int[5];
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //    Console.WriteLine($"enter the {i + 1} element of array");
+            //    while (!int.TryParse(Console.ReadLine(), out numbers[i]))
+            //    {
+            //        Console.WriteLine($"wrong format, please enter the {i + 1} element of array");
+            //    }
+            //}
+
+            //int x = 1;
+            //foreach (int i in numbers)
+            //{
+            //    Console.WriteLine($"the {x} element of array : {i}");
+            //    x++;
+            //}
+            #endregion
             #endregion
         }
     }
