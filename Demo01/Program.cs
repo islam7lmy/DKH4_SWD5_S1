@@ -1096,10 +1096,48 @@ namespace Demo01
             //Console.WriteLine((int)Gender.f);     //5
 
             #region  Ex: enums + params
-            CalculateBill(14,12,Menu.Pizza,Menu.Juice,Menu.Salad,Menu.Dessert);
+            //CalculateBill(14, 12, Menu.Pizza, Menu.Juice, Menu.Salad, Menu.Dessert);
             #endregion
 
+            #region permission
+            #region Enums
 
+            //Permission MyP = Permission.delete; 
+            //Console.WriteLine(MyP.ToString());
+
+            //MyP = (Permission) 3;
+            //Console.WriteLine(MyP.ToString()); //delete , execut
+
+            ////// If You Want To Add Permission, Do OR Operation
+            //MyP |= Permission.read;
+            //Console.WriteLine(MyP); // delete , execute , read
+
+            ////// If You Want To Remove (Deny) Permission, Do Nor Operation
+            //MyP &= ~Permission.read;
+            //Console.WriteLine(MyP.ToString());
+
+            //MyP &= ~Permission.write;
+            //Console.WriteLine(MyP.ToString());
+
+            //////If You Want To remove if exists or Add Permission if not //exists, Do XOR Operation
+            //MyP ^= Permission.write; // will be added because it's not exists
+            //Console.WriteLine(MyP);
+
+            //MyP ^= Permission.write; // will be Removed because it's exists
+            //Console.WriteLine(MyP);
+
+            ////// Check Read Permission is existed inside MyP 
+            //if((MyP & Permission.read) == Permission.read)
+            //    Console.WriteLine("Read permission is exists");
+            //else
+            //    Console.WriteLine("Read permission is not exists");
+
+            #endregion
+            #endregion
+
+            //function to add permission // passig by ref
+            //function to remove permission // passing by ref
+            //function to check if permission exists return true else return false //passing by value
             #endregion
         }
 
@@ -1223,26 +1261,26 @@ namespace Demo01
         //}
 
         #region Ex: enums + params
-        static double CalculateBill(int tax, int service, params Menu[] items)
-        {
-            double total = 0, taxinmony = 0, serviceinmony = 0;
-            Console.WriteLine("Order Details:");
+        //static double CalculateBill(int tax, int service, params Menu[] items)
+        //{
+        //    double total = 0, taxinmony = 0, serviceinmony = 0;
+        //    Console.WriteLine("Order Details:");
 
-            foreach (Menu item in items)
-            {
-                Console.WriteLine($"{item.ToString()} : {(int)item}");
-                total += (int)item;
-            }
+        //    foreach (Menu item in items)
+        //    {
+        //        Console.WriteLine($"{item.ToString()} : {(int)item}");
+        //        total += (int)item;
+        //    }
 
-            Console.WriteLine("ـــــــــــــــــــــــــــ");
-            Console.WriteLine($"Total Items : {total}");
-            taxinmony = total * ((double)tax / 100);
-            Console.WriteLine($"Tax : {taxinmony}");
-            serviceinmony = total * ((double)service / 100);
-            Console.WriteLine($"Service : {serviceinmony}");
-            Console.WriteLine($"Total Order : {total + taxinmony + serviceinmony}");
-            return total;
-        }
+        //    Console.WriteLine("ـــــــــــــــــــــــــــ");
+        //    Console.WriteLine($"Total Items : {total}");
+        //    taxinmony = total * ((double)tax / 100);
+        //    Console.WriteLine($"Tax : {taxinmony}");
+        //    serviceinmony = total * ((double)service / 100);
+        //    Console.WriteLine($"Service : {serviceinmony}");
+        //    Console.WriteLine($"Total Order : {total + taxinmony + serviceinmony}");
+        //    return total;
+        //}
         #endregion
         #endregion
         #endregion
@@ -1306,6 +1344,7 @@ namespace Demo01
         //    }
         //}
         #endregion
+
     }
 
     /// 1. struct
@@ -1332,21 +1371,41 @@ namespace Demo01
 
     //enum branches : byte
     //{
-    //    samrtvally = 105, gamsa = 201, _6oct = 252 , alex , mansoura, bns 
+    //    samrtvally = 105, gamsa = 201, _6oct = 252, alex = 253, mansoura = 254, bns = 255
     //}
 
     #region Ex: enums + params
-    enum Menu
-    {
-        Pizza = 120,
-        Burger = 150,
-        Juice = 40,
-        Salad = 30,
-        Dessert = 60
-    }
+    //enum Menu
+    //{
+    //    Pizza = 120,
+    //    Burger = 150,
+    //    Juice = 40,
+    //    Salad = 30,
+    //    Dessert = 60
+    //}
     #endregion
-    #region Premissions
 
+    #region Premissions
+    //class user
+    //{
+    //    public int id;
+    //    public Permission Myp; //1 byte => 8 permission
+
+    //    //public bool Write;   //1 byte
+    //    //public bool Read;    //1 byte
+    //    //public bool Execute; //1 byte
+    //    //public bool Delete;  //1 byte
+    //    //public bool Write;   //1 byte
+    //    //public bool Read;    //1 byte
+    //    //public bool Execute; //1 byte
+    //    //public bool Delete;  //1 byte
+    //}
+
+    //[Flags] // Data Annotation (Decrator) => learn new behvior to calc
+    //enum Permission : byte
+    //{ delete = 1, execut = 2, read = 4, write = 8 , select = 16 }
     #endregion
     #endregion
+
+
 }
