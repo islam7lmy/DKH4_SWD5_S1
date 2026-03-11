@@ -1133,11 +1133,27 @@ namespace Demo01
             //    Console.WriteLine("Read permission is not exists");
 
             #endregion
-            #endregion
 
-            //function to add permission // passig by ref
-            //function to remove permission // passing by ref
-            //function to check if permission exists return true else return false //passing by value
+            #region Functions
+            //Permission MyP = default;
+            //Console.WriteLine(MyP);
+
+            ////user u01 = default; //= new user();
+            ////Console.WriteLine(u01?.Myp);
+
+            ////function to add permission // passig by ref
+            //PermissionAllow(ref MyP, Permission.delete , Permission.execut);
+            //Console.WriteLine(MyP);
+
+            ////function to remove permission // passing by ref
+            //PermissionDeny(ref MyP, Permission.write, Permission.execut);
+            //Console.WriteLine(MyP);
+
+            ////function to check if permission exists return true else return false //passing by value
+            //Console.WriteLine(PermissionCheck(MyP, Permission.delete) ? $"Permission {Permission.delete} is allow" : $"Permission {Permission.delete} is Deny");
+            //Console.WriteLine(PermissionCheck(MyP, Permission.write) ? $"Permission {Permission.write} is allow" : $"Permission {Permission.write} is Deny"); 
+            #endregion
+            #endregion
             #endregion
         }
 
@@ -1345,6 +1361,32 @@ namespace Demo01
         //}
         #endregion
 
+        #region Enums
+        ////function to add permission // passig by ref
+        //static void PermissionAllow(ref Permission CurrentPermission, params Permission[] permissionsToAllow)
+        //{
+        //    foreach (var permission in permissionsToAllow)
+        //    {
+        //        CurrentPermission |= permission;
+        //    }
+        //}
+
+        ////function to remove permission // passing by ref
+        //static void PermissionDeny(ref Permission CurrentPermission, params Permission[] permissionsToDeny)
+        //{
+        //    foreach (var permission in permissionsToDeny)
+        //    {
+        //        CurrentPermission &= ~permission;
+        //    }
+        //}
+
+        ////function to check if permission exists return true else return false //passing by value
+        //static bool PermissionCheck(Permission CurrentPermission, Permission permissionsToCheck)
+        //{
+        //    return (CurrentPermission & permissionsToCheck) == permissionsToCheck;
+        //}
+        #endregion
+
     }
 
     /// 1. struct
@@ -1403,9 +1445,7 @@ namespace Demo01
 
     //[Flags] // Data Annotation (Decrator) => learn new behvior to calc
     //enum Permission : byte
-    //{ delete = 1, execut = 2, read = 4, write = 8 , select = 16 }
+    //{ delete = 1, execut = 2, read = 4, write = 8, select = 16 }
     #endregion
     #endregion
-
-
 }
