@@ -27,8 +27,13 @@ namespace OOP
             #region ex01: Point 
             //Point p1;
             /////allocat 8 unitialized bytes in stack
+            //Console.WriteLine(p1); //not valid
 
-            ////p1 = new Point();
+            //p1.X = 10;
+            //p1.Y = 20;
+            //Console.WriteLine(p1);
+
+            //p1 = new Point();
             ///// new keyword just for Constructor selection that will initialize the attributes of struct 
 
             ////p1 = new Point(10,20);
@@ -40,6 +45,39 @@ namespace OOP
             //Console.WriteLine(p1);
             #endregion
             #region ex02: Employee
+            //Employee emp = new Employee(10,"ahmed mohmed ali ibrahem",4000,50);
+            //Console.WriteLine(emp);
+
+            ////emp.Name = "ahmed mohmed ali ibrahem";
+            ////Console.WriteLine(emp.Name);
+
+            //emp.SetName("ahmed mohmed ali ibrahem");
+            //Console.WriteLine(emp.GetName());
+
+            //emp.Salary = 1000;
+            //Console.WriteLine(emp.Salary);
+
+            //Console.WriteLine(emp.Deduction);
+            #endregion
+            #region ex03: [indexer] phonebook
+            //(name , phone number)
+            PhoneBook book = new PhoneBook(3);
+            book.AddNumber("ahmed", 123, 0);
+            book.AddNumber("amr", 456, 1);
+            book.AddNumber("ali", 789, 2);
+
+            book.SetNumber("amr", 999);
+            Console.WriteLine(book.GetNumber("amr"));
+
+            book["ali"] = 999;
+            Console.WriteLine(book["ali"]);
+
+            for (int i = 0; i < book.Size; i++)
+            {
+                Console.WriteLine(book[i]);
+            }
+
+            //Console.WriteLine(book);
 
             #endregion
             #endregion

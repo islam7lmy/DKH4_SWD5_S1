@@ -20,10 +20,13 @@ namespace OOP
         public int Y;
 
         /// Compiler will always Generate Parameterless Constructor
-        //public Point()
-        //{
-        //    X = Y = default;
-        //}
+        public Point()
+        {
+            //X = Y = default;
+
+            //X = 10;
+            //Y = 10;
+        }
         /// to initialize all attributes with default value based on it's daatatype
         /// You Can't Create User-Defined Parameterless Constructor Inside Struct (Except C# 10.0)
 
