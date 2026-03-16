@@ -62,23 +62,43 @@ namespace OOP
             #region ex03: [indexer] phonebook
             //(name , phone number)
             PhoneBook book = new PhoneBook(3);
-            book.AddNumber("ahmed", 123, 0);
-            book.AddNumber("amr", 456, 1);
-            book.AddNumber("ali", 789, 2);
+            book.AddNumber("ahmed", 123);
+            book.AddNumber("amr", 456);
+            book.AddNumber("ali", 789);
+            book.AddNumber("omr", 188);
 
             book.SetNumber("amr", 999);
             Console.WriteLine(book.GetNumber("amr"));
 
-            book["ali"] = 999;
-            Console.WriteLine(book["ali"]);
+            book["ali"] = 999; //set of special prop [indexer]
+            Console.WriteLine(book["ali"]); //get of special prop [indexer]
 
+            //for (int i = 0; i < book.Size; i++)
+            //{
+            //    Console.WriteLine(book[i]);
+            //}
+
+            //Console.WriteLine(book[5]);
+            //Console.WriteLine(book);
+
+
+            //book.Size = 20;
             for (int i = 0; i < book.Size; i++)
             {
                 Console.WriteLine(book[i]);
             }
 
-            //Console.WriteLine(book);
+            //book.Size = 3;
+            for (int i = 0; i < book.Size; i++)
+            {
+                Console.WriteLine(book[i]);
+            }
 
+            //book.Size = 2;
+            for (int i = 0; i < book.Size; i++)
+            {
+                Console.WriteLine(book[i]);
+            }
             #endregion
             #endregion
         }
