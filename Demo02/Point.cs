@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOP.Inhertiance;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    internal struct Point
+    internal struct Point 
     {
         /// What You Can Write Inside The Class Or Struct?
         /// 1. Fields (Attributes)
@@ -15,18 +16,21 @@ namespace OOP
         /// 4. Properties
         /// 5. Events
         /// 6. Indexers
-        
-        public int X; 
+
+        public int X;
         public int Y;
 
-        /// Compiler will always Generate Parameterless Constructor
-        public Point()
-        {
-            //X = Y = default;
+        //public int X { get; set; }
+        //public int Y { get; set; }
 
-            //X = 10;
-            //Y = 10;
-        }
+        /// Compiler will always Generate Parameterless Constructor
+        //public Point()
+        //{
+        //    //X = Y = default;
+
+        //    //X = 10;
+        //    //Y = 10;
+        //}
         /// to initialize all attributes with default value based on it's daatatype
         /// You Can't Create User-Defined Parameterless Constructor Inside Struct (Except C# 10.0)
 

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-
     //List 
     struct PhoneBook
     {
@@ -63,6 +62,22 @@ namespace OOP
         }
 
         /// method to remove contact
+        public void RemoveNumber(string _name)
+        {
+            int index = Array.IndexOf(Names, _name);
+            if (index >= 0)
+            {
+                for (int i = index; i < count - 1; i++)
+                {
+                    Names[i] = Names[i + 1];
+                    Numbers[i] = Numbers[i + 1];
+                }
+                count--;
+                Resize(size - 1);
+            }
+            else
+                Console.WriteLine("Name not Found");
+        }
 
         ///write object memeber method GetNumber take name and return number
         public long GetNumber(string _name)
