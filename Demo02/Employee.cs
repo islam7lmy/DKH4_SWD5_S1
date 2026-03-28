@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace OOP
 {
-    internal struct Employee
+    internal struct Employee1
     {
         public int ID;
 
@@ -15,7 +15,7 @@ namespace OOP
         string Name;  // length <= 20
         decimal salary; // salary >= 5000
 
-        public Employee(int _id, string _name, decimal _salary, int _age)
+        public Employee1(int _id, string _name, decimal _salary, int _age)
         {
             ID = _id;
             //Name = _name.Length <= 20 ? _name : _name.Substring(0, 20);
