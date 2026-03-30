@@ -1,4 +1,5 @@
 ﻿using OOP.Inhertiance;
+using OOP.Interfaces;
 using OOP.PolyMorphism_OverRiding;
 using System;
 
@@ -258,9 +259,111 @@ namespace OOP
             //typeC.MyFun02();//TypeC: A = 1, B = 2, C = 3
             //typeD1.MyFun02();//TypeD: A = 1, B = 2 , C = 3, D = 4
             //typeD2.MyFun02();//TypeE: A = 1, B = 2, C = 3, D = 4, E = 5 
+            #endregion
+            #endregion
+
+            #region Interface 
+            #region EX01
+            //IMyType myType0 = new IMyType(); //not valid
+
+            //IMyType myType = new MyTypev1(); //binding
+            //myType.MyFun();
+            //myType.Print();
+
+            //MyTypev1 myType1 = new MyTypev1();
+            //myType1.MyFun();
+            //myType1.Print(); //invalid
+            #endregion
+
+            #region Ex02
+            //SeriesByTwo seriesByTwo = new SeriesByTwo();
+            //Print10NumbersFromSeries(seriesByTwo);
+
+            //SeriesByThree seriesByThree = new SeriesByThree();
+            //Print10NumbersFromSeries(seriesByThree);
+
+            //SeriesByFour seriesByFour = new SeriesByFour();
+            //Print10NumbersFromSeries(seriesByFour);
+
+            //SeriesBySix seriesBySix = new SeriesBySix();
+            //Print10NumbersFromSeries(seriesBySix);
+            #endregion
+
+            #region Implment Interface Implicitly Vs Implment Interface Explicitly
+            //AirPlane airPlane00 = new AirPlane();
+            //airPlane00.Backward();
+            ////airPlane00.Forward(); //invalid
+
+            //IMoveable airPlane01 = new AirPlane();
+            //airPlane01.Backward();
+            //airPlane01.Forward(); //AirPlane is Moving Forward
+            //                      //valid => IMoveable Interface Reference => Access Onlly On IMoveable Interface Methods
+
+            //IFlayable airPlane02 = new AirPlane();
+            //airPlane02.Backward();
+            //airPlane02.Forward(); //AirPlane is Flying Forward
+            //                      //valid => IFlayable Interface Reference => Access Onlly On IFlayable Interface Methods
 
             #endregion
             #endregion
+
+            #region Shallow Copy Vs Deep Copy
+            //int[] Arr01 = { 1, 2, 3 };
+            //int[] Arr02 = { 4, 5, 6 };
+
+            //Console.WriteLine($"Arr01 = {Arr01.GetHashCode()}");
+            //Console.WriteLine($"Arr02 = {Arr02.GetHashCode()}");
+
+            #region Shallow Copy
+            //Arr02 = Arr01; //shallow copy => copy reference only
+            ////////// This Object { 1, 2, 3} Has 2 References (Arr01, Arr02) [اسمين دلع]
+            ////////// This Object {4, 5, 6 } Became UnREachable Object
+            ////////// Shallow Copy (سطحي)
+            //Console.WriteLine("After Shallow Copy");
+
+            //Console.WriteLine($"Arr01 = {Arr01.GetHashCode()}");
+            //Console.WriteLine($"Arr02 = {Arr02.GetHashCode()}");
+            #endregion
+
+            #region Deep Copy
+            //Arr02 = (int[])Arr01.Clone();
+            ////Arr02[0] = 9;
+            //Console.WriteLine("After Deep Copy --> Arr02 = (int[]) Arr01.Clone()");
+            //Console.WriteLine($"Arr01 = {Arr01.GetHashCode()}");
+            //Console.WriteLine($"Arr02 = {Arr02.GetHashCode()}");
+
+
+            //foreach (var item in Arr01)
+            //{
+            //    Console.Write($"{item}\t");
+            //}
+            //Console.WriteLine();
+            //foreach (var item in Arr02)
+            //{
+            //    Console.Write($"{item}\t");
+            //}
+            #endregion
+            #endregion
+
+            #region Built-In Interface ICloneable
+            #endregion
+
+            #region Built-In Interface IComparable
+            #endregion
+
+            #region Abstract Class
+            #endregion
+
+            #region Operator Overloading
+            #endregion
+
+            #region User-Defined Casting Operator
+            #endregion
+
+            #region Static [Class, Attribute, Property, Constructor, Method] and Constants
+            #endregion
+
+
         }
 
         #region PolyMorphism 1. Function overloading
@@ -294,38 +397,95 @@ namespace OOP
         #endregion
 
         #region Why Need Binding
-        //public static void ProcessEmployee(Employee emp)
+        public static void ProcessEmployee(Employee emp)
+        {
+            if (emp is not null)
+            {
+                emp.MyFun01(); // static binded method => i am employee
+                emp.MyFun02(); // dynamic Binded Method
+            }
+        }
+        public static void ProcessEmployee(FullTimeEmployee emp)
+        {
+            if (emp is not null)
+            {
+                emp.MyFun01();
+                emp.MyFun02();
+            }
+        }
+        public static void ProcessEmployee(PartTimeEmployee emp)
+        {
+            if (emp is not null)
+            {
+                emp.MyFun01();
+                emp.MyFun02();
+            }
+        }
+        public static void ProcessEmployee(FreelanceEmployee emp)
+        {
+            if (emp is not null)
+            {
+                emp.MyFun01();
+                emp.MyFun02();
+            }
+        }
+        #endregion
+
+        #region InterFace
+        public static void Print10NumbersFromSeries(ISeries series)
+        {
+            if (series is not null)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine(series.Current);
+                    series.GetNext();
+                }
+                series.Reset();
+                Console.WriteLine();
+            }
+        }
+        //public static void Print10NumbersFromSeries(SeriesByTwo series)
         //{
-        //    if (emp is not null)
+        //    if (series is not null)
         //    {
-        //        emp.MyFun01(); // static binded method => i am employee
-        //        emp.MyFun02(); // dynamic Binded Method
+        //        for (int i = 0; i < 10; i++)
+        //        {
+        //            Console.WriteLine(series.Current);
+        //            series.GetNext();
+        //        }
+        //        series.Reset();
+        //        Console.WriteLine();
         //    }
         //}
-        ////public static void ProcessEmployee(FullTimeEmployee emp)
-        ////{
-        ////    if(emp is not null)
-        ////    {
-        ////        emp.MyFun01();
-        ////        emp.MyFun02();
-        ////    }
-        ////}
-        ////public static void ProcessEmployee(PartTimeEmployee emp)
-        ////{
-        ////    if (emp is not null)
-        ////    {
-        ////        emp.MyFun01();
-        ////        emp.MyFun02();
-        ////    }
-        ////}
-        ////public static void ProcessEmployee(FreelanceEmployee emp)
-        ////{
-        ////    if (emp is not null)
-        ////    {
-        ////        emp.MyFun01();
-        ////        emp.MyFun02();
-        ////    }
-        ////}
+
+        //public static void Print10NumbersFromSeries(SeriesByThree series)
+        //{
+        //    if (series is not null)
+        //    {
+        //        for (int i = 0; i < 10; i++)
+        //        {
+        //            Console.WriteLine(series.Current);
+        //            series.GetNext();
+        //        }
+        //        series.Reset();
+        //        Console.WriteLine();
+        //    }
+        //}
+
+        //public static void Print10NumbersFromSeries(SeriesByFour series)
+        //{
+        //    if (series is not null)
+        //    {
+        //        for (int i = 0; i < 10; i++)
+        //        {
+        //            Console.WriteLine(series.Current);
+        //            series.GetNext();
+        //        }
+        //        series.Reset();
+        //        Console.WriteLine();
+        //    }
+        //}
         #endregion
     }
 }
