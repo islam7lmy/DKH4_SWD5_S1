@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP.PolyMorphism_OverRiding
 {
-    internal class Employee
+    internal class Employee02
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -23,7 +23,7 @@ namespace OOP.PolyMorphism_OverRiding
         }
     }
 
-    class FullTimeEmployee : Employee
+    class FullTimeEmployee : Employee02
     {
         public decimal Salary { get; set; }
         public new void MyFun01()
@@ -37,7 +37,7 @@ namespace OOP.PolyMorphism_OverRiding
         }
     }
 
-    class PartTimeEmployee : Employee
+    class PartTimeEmployee : Employee02
     {
         public decimal HoureRate { get; set; }
         public int CountOfHours { get; set; }
@@ -53,7 +53,7 @@ namespace OOP.PolyMorphism_OverRiding
         }
     }
 
-    class FreelanceEmployee : Employee
+    class FreelanceEmployee : Employee02
     {
 
     }

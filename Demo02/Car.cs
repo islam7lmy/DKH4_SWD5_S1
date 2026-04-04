@@ -8,7 +8,7 @@ namespace OOP
 {
     internal class Car
     {
-        #region full property [not recomended if no logic will do in get or set]
+        #region full property //
         ///full property
         //private int id;
         //public int Id

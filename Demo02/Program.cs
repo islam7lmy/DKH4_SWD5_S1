@@ -1,7 +1,9 @@
-﻿using OOP.Inhertiance;
+﻿using OOP.Abstraction;
+using OOP.Inhertiance;
 using OOP.Interfaces;
 using OOP.PolyMorphism_OverRiding;
 using System;
+using System.Xml.Linq;
 
 namespace OOP
 {
@@ -346,12 +348,82 @@ namespace OOP
             #endregion
 
             #region Built-In Interface ICloneable
+            //Employee emp01 = new Employee()
+            //{
+            //    Id = 10,
+            //    Name = "ahmed",
+            //    Salary = 4000
+            //};
+
+            //Employee emp02 = new Employee();
+            //emp02.Id = 20;
+            //emp02.Name = "Ali";
+            //emp02.Salary = 8000;
+
+            //Console.WriteLine($"Emp01: {emp01.GetHashCode()}");
+            //Console.WriteLine($"Emp02: {emp02.GetHashCode()}");
+
+            //#region Shallow Copy
+            ////emp02 = emp01; //shallow copy => copy reference only
+            /////// this object {Id = 10,Name = "ahmed",Salary = 4000} => has 2 references (emp01, emp02) [اسمين دلع]
+            /////// this object {Id = 20,Name = "Ali",Salary = 8000} => became UnREachable Object
+
+            ////Console.WriteLine("After Shallow copy ==> emp02 = emp01"); 
+            //#endregion
+
+            //#region DeepCopy
+            ////emp02 = Employee.DeepCopy(emp01); //deep copy => copy all values of emp01 to emp02 => 2 different objects in heap
+            ////emp02 = new Employee(emp01); //copy constructor => deep copy
+            //emp02 =(Employee) emp01.Clone();//ICloneable Interface => deep copy
+
+            //Console.WriteLine("After Deep copy ==> emp02 = emp01");
+            //#endregion
+
+
+            //Console.WriteLine($"Emp01: {emp01.GetHashCode()}");
+            //Console.WriteLine($"Emp02: {emp02.GetHashCode()}");
+
+            //Console.WriteLine($"Emp01: {emp01}");
+            //Console.WriteLine($"Emp02: {emp02}");
             #endregion
 
             #region Built-In Interface IComparable
+            //Employee[] employees =
+            //{
+            //    new Employee() { Id = 10, Name = "ahmed", Salary = 4000 },
+
+            //    new Employee() { Id = 20, Name = "Ali", Salary = 8000 },
+
+            //    new Employee() { Id = 30, Name = "Amr", Salary = 6000 },
+
+            //    new Employee() { Id = 40, Name = "Omar", Salary = 5000 }
+            //};
+
+            //Array.Sort(employees);
+
+            ////for (int i = 0; i < employees.Length; i++)
+            ////{
+            ////    for(int j = 0; j < employees.Length - 1 - i; j++)
+            ////    {
+            ////        if (employees[j].CompareTo(employees[j + 1]) > 0)
+            ////            SwapEmployee(employees[j], employees[j + 1]);
+            ////    }
+            ////}
+
+
+            //foreach (var emp in employees)
+            //{
+            //    Console.WriteLine(emp);
+            //}
+
             #endregion
 
             #region Abstract Class
+            //Shape shape1 = new Shape();
+            //Shape shape = new squere(10);
+            //Console.WriteLine(shape.Perimeter);
+            //Console.WriteLine(shape.CalcArea());
+
             #endregion
 
             #region Operator Overloading
@@ -370,7 +442,7 @@ namespace OOP
         //1.data type of paramaters
         //2.count of paramaters
         //3.order if not same data type of paramaters
-        public static int Sum(int x , int y)
+        public static int Sum(int x, int y)
         {
             return x + y;
         }
@@ -397,38 +469,38 @@ namespace OOP
         #endregion
 
         #region Why Need Binding
-        public static void ProcessEmployee(Employee emp)
-        {
-            if (emp is not null)
-            {
-                emp.MyFun01(); // static binded method => i am employee
-                emp.MyFun02(); // dynamic Binded Method
-            }
-        }
-        public static void ProcessEmployee(FullTimeEmployee emp)
-        {
-            if (emp is not null)
-            {
-                emp.MyFun01();
-                emp.MyFun02();
-            }
-        }
-        public static void ProcessEmployee(PartTimeEmployee emp)
-        {
-            if (emp is not null)
-            {
-                emp.MyFun01();
-                emp.MyFun02();
-            }
-        }
-        public static void ProcessEmployee(FreelanceEmployee emp)
-        {
-            if (emp is not null)
-            {
-                emp.MyFun01();
-                emp.MyFun02();
-            }
-        }
+        //public static void ProcessEmployee(Employee emp)
+        //{
+        //    if (emp is not null)
+        //    {
+        //        emp.MyFun01(); // static binded method => i am employee
+        //        emp.MyFun02(); // dynamic Binded Method
+        //    }
+        //}
+        //public static void ProcessEmployee(FullTimeEmployee emp)
+        //{
+        //    if (emp is not null)
+        //    {
+        //        emp.MyFun01();
+        //        emp.MyFun02();
+        //    }
+        //}
+        //public static void ProcessEmployee(PartTimeEmployee emp)
+        //{
+        //    if (emp is not null)
+        //    {
+        //        emp.MyFun01();
+        //        emp.MyFun02();
+        //    }
+        //}
+        //public static void ProcessEmployee(FreelanceEmployee emp)
+        //{
+        //    if (emp is not null)
+        //    {
+        //        emp.MyFun01();
+        //        emp.MyFun02();
+        //    }
+        //}
         #endregion
 
         #region InterFace
