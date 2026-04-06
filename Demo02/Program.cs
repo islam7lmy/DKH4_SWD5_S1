@@ -1,6 +1,7 @@
 ﻿using OOP.Abstraction;
 using OOP.Inhertiance;
 using OOP.Interfaces;
+using OOP.Operators_overloading;
 using OOP.PolyMorphism_OverRiding;
 using System;
 using System.Xml.Linq;
@@ -427,9 +428,66 @@ namespace OOP
             #endregion
 
             #region Operator Overloading
+            //Complex c1 = new Complex() { Real = 2, Imag = 3 };
+            //Complex c2 = new Complex() { Real = 3, Imag = 4 };
+            //Complex c3 = new Complex() { Real = 4, Imag = 5 };
+
+            //Complex c4 = c1 + c2 + c3;
+            //Console.WriteLine(c4);
+
+            //Complex c5 = default;
+            //c4 = c4 + c5;
+            //Console.WriteLine(c4);
+
+            //ComplexExtinsions.Add(c1 , c2);
+            //c1.Add(c2).Add(c3);
+
+            /////postfix => first use with old value then plus
+            //Console.WriteLine(c1++); //print =>  2 + 3i  , then value => 3 + 4i
+            //Console.WriteLine(c1--); //print =>  3 + 4i  , then value => 2 + 3i
+            /////prefix =>  first plus then use with new value
+            //Console.WriteLine(++c1); //value => 3 + 4i ,  then print => 3 + 4i
+            //Console.WriteLine(--c1); //value => 2 + 3i ,  then print => 2 + 3i
+
+            //int a = (int) c1; // explicit casting // 2
+            ////int a = c1; //implicit casting =>> not recomnded
+            //Console.WriteLine(a);
+
+            //string test = c1;
+
+            //int x = 5;
+            //int result = x++ + ++x;
+            //int a = x++; // a = 5 , x = 6
+            //int b = ++x; // b = 7 , x = 7
+            //int result2 = a + b; //12 
+            //Console.WriteLine(x);
+            //Console.WriteLine(result);
+            //Console.WriteLine(x++); //print => 5 , x = 6
+            //Console.WriteLine(++x); // x = 7  , print => 7
+            //x++; //x => 6
+            //++x; // x => 6
+
             #endregion
 
             #region User-Defined Casting Operator
+            Operators_overloading.Employee employee = new Operators_overloading.Employee()
+            {
+                Id = 102030,
+                FirstName = "Ahmed",
+                LastName = "Mohamed",
+                BirthDate = new DateOnly(2010, 03, 15),
+                Salary = 30000,
+                Address = "13, el galaa street, front of mansoura university gate",
+                City = "Mansoura",
+                Country = "Egypt"
+            };
+
+            EmployeeViewModel empview =(EmployeeViewModel) employee;
+            EmployeeViewModel empview02 = EmployeeViewModel.FromEmployee(employee);
+            EmployeeViewModel empview03 = employee.ToViewModel(employee); //employee class
+            EmployeeViewModel empview04 = EmployeeExtensions.ToViewModel(employee); // EmployeeExtensions class
+            EmployeeViewModel empview05 = employee.ToViewModel();
+            Console.WriteLine(empview);
             #endregion
 
             #region Static [Class, Attribute, Property, Constructor, Method] and Constants
