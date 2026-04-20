@@ -1,8 +1,10 @@
 ﻿using OOP.Abstraction;
+using OOP.Generics;
 using OOP.Inhertiance;
 using OOP.Interfaces;
 using OOP.Operators_overloading;
 using OOP.PolyMorphism_OverRiding;
+using OOP.Static;
 using System;
 using System.Xml.Linq;
 
@@ -470,28 +472,83 @@ namespace OOP
             #endregion
 
             #region User-Defined Casting Operator
-            Operators_overloading.Employee employee = new Operators_overloading.Employee()
-            {
-                Id = 102030,
-                FirstName = "Ahmed",
-                LastName = "Mohamed",
-                BirthDate = new DateOnly(2010, 03, 15),
-                Salary = 30000,
-                Address = "13, el galaa street, front of mansoura university gate",
-                City = "Mansoura",
-                Country = "Egypt"
-            };
+            //Operators_overloading.Employee employee = new Operators_overloading.Employee()
+            //{
+            //    Id = 102030,
+            //    FirstName = "Ahmed",
+            //    LastName = "Mohamed",
+            //    BirthDate = new DateOnly(2010, 03, 15),
+            //    Salary = 30000,
+            //    Address = "13, el galaa street, front of mansoura university gate",
+            //    City = "Mansoura",
+            //    Country = "Egypt"
+            //};
 
-            EmployeeViewModel empview =(EmployeeViewModel) employee;
-            EmployeeViewModel empview02 = EmployeeViewModel.FromEmployee(employee);
-            EmployeeViewModel empview03 = employee.ToViewModel(employee); //employee class
-            EmployeeViewModel empview04 = EmployeeExtensions.ToViewModel(employee); // EmployeeExtensions class
-            EmployeeViewModel empview05 = employee.ToViewModel();
-            Console.WriteLine(empview);
+            //EmployeeViewModel empview =(EmployeeViewModel) employee;
+            //EmployeeViewModel empview02 = EmployeeViewModel.FromEmployee(employee);
+            //EmployeeViewModel empview03 = employee.ToViewModel(employee); //employee class
+            //EmployeeViewModel empview04 = EmployeeExtensions.ToViewModel(employee); // EmployeeExtensions class
+            //EmployeeViewModel empview05 = employee.ToViewModel();
+            //Console.WriteLine(empview);
             #endregion
 
             #region Static [Class, Attribute, Property, Constructor, Method] and Constants
+            //Utility u01 = new Utility();
+            //Utility.PI = 3.14;
+            //Console.WriteLine(Utility.CalcCircleArea(10));
             #endregion
+
+            #region Partiales
+            //Partiales.Employee employee = new Partiales.Employee();
+            //employee.Id = 10;
+            //employee.Name = "ahmed";
+            //employee.Salary = 1000;
+            //employee.Address = "mansoura";
+            //employee.Test = 1010;
+            //employee.Hello();
+            //employee.Age = 15;
+            //employee.test(); //not valid
+            #endregion
+
+            #region Generics
+            #region Ex:01 Swap
+            //int num01 = 10, num02 = 20;
+            //object x = num01;
+            //Helper.SWAP<int>(ref num01,ref num02);
+            //Console.WriteLine($"num01:{num01} , num02:{num02}");
+
+            //string str01 = "ahmed", str02 = "Mohmed";
+            //Helper.SWAP<string>(ref str01,ref str02);
+
+            //double numx = 1.5, numy = 3.5;
+            //Helper.SWAP<double>(ref numx, ref numy);
+
+            //Generics.Point p1 = new Generics.Point(10, 20);
+            //Generics.Point p2 = new Generics.Point(30, 40);
+            //Helper.SWAP(ref p1, ref p2);
+            //Console.WriteLine($"P1:{p1}  , P2:{p2}");
+
+            #endregion
+            #region Ex:02 Search
+            //int[] Numbers = { 5, 3, 2, 19, 4, 10, 1, 4 };
+            //int position = Helper.SearchArray(Numbers, 10);
+            //Console.WriteLine(position);
+
+            Generics.Point[] points =
+            {
+                new Generics.Point(0,0),
+                new Generics.Point(1,0),
+                new Generics.Point(2,0),
+                new Generics.Point(3,0),
+                new Generics.Point(4,0),
+                new Generics.Point(5,0),
+            };
+
+            int postion = Helper.SearchArray(points, new Generics.Point(3, 0));
+            Console.WriteLine(postion);
+            #endregion
+            #endregion
+
 
 
         }
