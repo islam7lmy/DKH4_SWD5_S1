@@ -6,6 +6,7 @@ using OOP.Operators_overloading;
 using OOP.PolyMorphism_OverRiding;
 using OOP.Static;
 using System;
+using System.Collections;
 using System.Xml.Linq;
 
 namespace OOP
@@ -259,11 +260,11 @@ namespace OOP
             //TypeD typeD2 = new TypeE(1, 2, 3, 4, 5);
 
 
-            //typeA.MyFun02();//TypeC: A = 1, B = 2, C = 3
-            //typeB.MyFun02();//TypeC: A = 1, B = 2, C = 3
-            //typeC.MyFun02();//TypeC: A = 1, B = 2, C = 3
-            //typeD1.MyFun02();//TypeD: A = 1, B = 2 , C = 3, D = 4
-            //typeD2.MyFun02();//TypeE: A = 1, B = 2, C = 3, D = 4, E = 5 
+            //typeA.MyFun02();  //TypeC:   A = 1, B = 2, C = 3
+            //typeB.MyFun02();  //TypeC:  A = 1, B = 2, C = 3
+            //typeC.MyFun02();  //TypeC:  A = 1, B = 2, C = 3
+            //typeD1.MyFun02(); //TypeD: A = 1, B = 2 , C = 3, D = 4
+            //typeD2.MyFun02(); //TypeE: A = 1, B = 2, C = 3, D = 4, E = 5 
             #endregion
             #endregion
 
@@ -534,22 +535,91 @@ namespace OOP
             //int position = Helper.SearchArray(Numbers, 10);
             //Console.WriteLine(position);
 
-            Generics.Point[] points =
-            {
-                new Generics.Point(0,0),
-                new Generics.Point(1,0),
-                new Generics.Point(2,0),
-                new Generics.Point(3,0),
-                new Generics.Point(4,0),
-                new Generics.Point(5,0),
-            };
+            //Generics.Point[] points =
+            //{
+            //    new Generics.Point(0,0),
+            //    new Generics.Point(1,0),
+            //    new Generics.Point(2,0),
+            //    new Generics.Point(3,0),
+            //    new Generics.Point(4,0),
+            //    new Generics.Point(5,0),
+            //};
 
-            int postion = Helper.SearchArray(points, new Generics.Point(3, 0));
-            Console.WriteLine(postion);
+            //int postion = Helper.SearchArray(points, new Generics.Point(3, 0));
+            //Console.WriteLine(postion);
+            #endregion
+            #region Ex:03 BubbleSort
+            //int[] Numbers = { 5, 3, 2, 19, 4, 10, 1, 4 };
+            //Array.Sort(Numbers);
+            //foreach (var item in Numbers)
+            //{
+            //    Console.Write(item);
+            //    Console.Write("\t");
+            //}
+            //Console.WriteLine();
+
+            //Helper.BubbleSort(Numbers);
+            //foreach (var item in Numbers)
+            //{
+            //    Console.Write(item);
+            //    Console.Write("\t");
+            //}
+            //Console.WriteLine();
+
+            //Generics.Employee[] employees = {
+            //new Generics.Employee(){ Id = 10 , Name ="Ahmed" ,Salary = 10_000},
+            //new Generics.Employee(20,"mohmed",2_000),
+            //new Generics.Employee(30,"ali",5_000),
+            //};
+
+            //Helper.BubbleSort(employees);
+
+            //foreach (var emp in employees)
+            //{
+            //    Console.WriteLine(emp);
+            //}
+
+
+            //Helper.Sum(10, 15);
+            //Helper.Sum(10.0f, 15);
             #endregion
             #endregion
 
+            #region Collections
+            #region Non-Generic
+            //array static length
+            //arraylist dynamic length
+            //arraylist based on array but
+            //if array is full clr will create new array and copy old elements in it
 
+            //ArrayList arrayList = new ArrayList();
+            //Console.WriteLine($"count = {arrayList.Count}, capacity = {arrayList.Capacity}");
+            //arrayList.Add(1);
+            //Console.WriteLine($"count = {arrayList.Count}, capacity = {arrayList.Capacity}");
+            //arrayList.AddRange(new int[] { 2, 3, 4 });
+            //Console.WriteLine($"count = {arrayList.Count}, capacity = {arrayList.Capacity}");
+            //arrayList.Add(5);
+            //Console.WriteLine($"count = {arrayList.Count}, capacity = {arrayList.Capacity}");
+            //arrayList.AddRange(new int[] { 6, 7, 8, 9});
+            //Console.WriteLine($"count = {arrayList.Count}, capacity = {arrayList.Capacity}");
+            //arrayList.TrimToSize();
+            //Console.WriteLine($"count = {arrayList.Count}, capacity = {arrayList.Capacity}");
+            //arrayList.Add(10);
+            //Console.WriteLine($"count = {arrayList.Count}, capacity = {arrayList.Capacity}");
+
+            //defictes of arraylist and nongenarics types
+            //ArrayList arrayList = new ArrayList() { 1, 2, 3, 4, 5, 6 };
+            //Console.WriteLine($"count = {arrayList.Count}, capacity = {arrayList.Capacity}");
+            ////int? x = arrayList[0] as int?; // 1.boxing & unboxing
+            //arrayList.Add("Ahmed");          // 2. enforce type safty
+            //arrayList.Add(true);
+            //arrayList.Add(new DateOnly(2010,03,13));
+            //SumArrayList(arrayList);
+            #endregion
+            #region Generic
+
+            #endregion
+            #endregion
 
         }
 
@@ -673,6 +743,22 @@ namespace OOP
         //        Console.WriteLine();
         //    }
         //}
+        #endregion
+
+        #region Collections
+        public static int SumArrayList(ArrayList arr)
+        {
+            int sum = 0;
+            if(arr is not null)
+            {
+                foreach (var item in arr)
+                {
+                    //sum += (int)item; 
+                    sum += item as int? ?? 0; 
+                }
+            }
+            return sum;
+        }
         #endregion
     }
 }
