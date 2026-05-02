@@ -534,6 +534,7 @@ namespace OOP
             //int[] Numbers = { 5, 3, 2, 19, 4, 10, 1, 4 };
             //int position = Helper.SearchArray(Numbers, 10);
             //Console.WriteLine(position);
+            //Console.WriteLine(Array.IndexOf(Numbers, 10)); 
 
             //Generics.Point[] points =
             //{
@@ -547,6 +548,31 @@ namespace OOP
 
             //int postion = Helper.SearchArray(points, new Generics.Point(3, 0));
             //Console.WriteLine(postion);
+            //Console.WriteLine(Array.IndexOf(points, new Generics.Point(3, 0)));
+
+
+
+
+            //int[] arr1 = { 1, 2, 3 };
+            //int[] arr2 = { 1, 2, 3 };
+            //Console.WriteLine(arr1.GetHashCode() == arr2.GetHashCode()); 
+            //Console.WriteLine(arr1.Equals(arr2));
+
+            //string str01 = "ahmed";
+            //string str02 = "ahmed";
+            //Console.WriteLine(str01.GetHashCode() == str02.GetHashCode());
+            //Console.WriteLine(str01.Equals(str02));
+
+            //Generics.Point p1 = new Generics.Point(3, 0);
+            //Generics.Point p2 = new Generics.Point(3, 0);
+            //Console.WriteLine(p1.GetHashCode());
+            //Console.WriteLine(p2.GetHashCode());
+            //Console.WriteLine(p1.Equals(p2));
+            //Console.WriteLine(p1 == p2); //refernce in memory == refernce in memory
+
+            //Generics.Point p3 = new Generics.Point(3, 0);
+            //Generics.Point p4 = p3;
+            //Console.WriteLine(p3 == p4);
             #endregion
             #region Ex:03 BubbleSort
             //int[] Numbers = { 5, 3, 2, 19, 4, 10, 1, 4 };
@@ -616,8 +642,88 @@ namespace OOP
             //arrayList.Add(new DateOnly(2010,03,13));
             //SumArrayList(arrayList);
             #endregion
-            #region Generic
+            #region Generics
+            #region List
+            //List<int> numbers = new List<int>();
+            //Console.WriteLine($"count = {numbers.Count}, capacity = {numbers.Capacity}");
+            //numbers.Add(1);
+            //Console.WriteLine($"count = {numbers.Count}, capacity = {numbers.Capacity}");
+            //numbers.AddRange(new int[] { 2,3,4});
+            //Console.WriteLine($"count = {numbers.Count}, capacity = {numbers.Capacity}");
+            //numbers.Add(5);
+            //Console.WriteLine($"count = {numbers.Count}, capacity = {numbers.Capacity}");
+            //numbers.TrimExcess();
+            //Console.WriteLine($"count = {numbers.Count}, capacity = {numbers.Capacity}");
 
+            //List<int> numbers = new List<int>(9) /*{ 1, 2, 3, 4, 5, 6, 7, 8, 9 }*/;
+            ////Console.WriteLine($"count = {numbers.Count}, capacity = {numbers.Capacity}");
+            //////int x = numbers[0]; 
+            ////numbers[0] = 1;
+            //////numbers.Add(10);
+            //////int x = numbers[0];
+            //////numbers[0] = 2;
+            //////Console.WriteLine(x);
+            ////Console.WriteLine($"count = {numbers.Count}, capacity = {numbers.Capacity}");
+            //numbers.Add("Ahmed"); /// enforce type safty
+
+            #region Methods
+            ///BinarySearch
+            ///clear
+            ///contains
+            ///copyto
+            ///ensurcapcity
+            ///indexof
+            ///remove
+            ///sort & reverse
+            ///getrange
+            #endregion
+            #endregion
+            #region linkedlist
+            //LinkedList<int> linkedlist = new LinkedList<int>();
+            //Console.WriteLine(linkedlist.Count);
+            //linkedlist.AddFirst(1);
+            //linkedlist.AddLast(2);
+            //linkedlist.AddAfter(linkedlist.First,3);
+            //linkedlist.AddBefore(linkedlist.Last,3);
+            //int x = linkedlist.First.Next.Value;
+            //linkedlist.Find(4); //first node with this value
+            //linkedlist.FindLast(5); //last node with this value
+            //linkedlist.Contains(4);
+            #endregion
+            #region stack
+            /// مخزن الطلقات
+            ///حافظة الاسطوانات 
+            //Stack<int> stack = new Stack<int>();
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+
+            //Console.WriteLine(stack.Peek());
+            //Console.WriteLine(stack.Peek());
+            //Console.WriteLine(stack.Pop());//3 
+            //Console.WriteLine(stack.Peek());
+            //Console.WriteLine(stack.Pop());
+
+            //if(stack.TryPop(out int lastnum))
+            //{
+            //    Console.WriteLine(lastnum);
+            //}
+            #endregion
+            #region َqueue
+            /// طابور الاوردارت
+            //Queue<int> queue = new Queue<int>();
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+
+            //Console.WriteLine(queue.Peek);
+            //Console.WriteLine(queue.Dequeue());
+
+            //if(queue.TryDequeue(out int firstnum))
+            //{
+            //    Console.WriteLine(firstnum);
+            //}
+            #endregion
             #endregion
             #endregion
 
@@ -749,12 +855,12 @@ namespace OOP
         public static int SumArrayList(ArrayList arr)
         {
             int sum = 0;
-            if(arr is not null)
+            if (arr is not null)
             {
                 foreach (var item in arr)
                 {
                     //sum += (int)item; 
-                    sum += item as int? ?? 0; 
+                    sum += item as int? ?? 0;
                 }
             }
             return sum;

@@ -129,22 +129,22 @@ namespace OOP.Generics
         //} 
         #endregion
         #region Genrics
-        public static void BubbleSort<T>(T[] arr) where T : IComparable<T> //IComparable //ICompare
-        {
-            if (arr is not null)
-            {
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    for (int j = 0; j < arr.Length - 1 - i; j++)
-                    {
-                        //if (arr[j] > arr[j + 1])
-                        //if (arr[j].Compare(arr[j + 1]) > 0)
-                        if (arr[j].CompareTo(arr[j + 1]) > 0)
-                            SWAP(ref arr[j], ref arr[j + 1]);
-                    }
-                }
-            }
-        }
+        //public static void BubbleSort<T>(T[] arr) where T : IComparable<T> //IComparable //ICompare
+        //{
+        //    if (arr is not null)
+        //    {
+        //        for (int i = 0; i < arr.Length; i++)
+        //        {
+        //            for (int j = 0; j < arr.Length - 1 - i; j++)
+        //            {
+        //                //if (arr[j] > arr[j + 1])
+        //                //if (arr[j].Compare(arr[j + 1]) > 0)
+        //                if (arr[j].CompareTo(arr[j + 1]) > 0)
+        //                    SWAP(ref arr[j], ref arr[j + 1]);
+        //            }
+        //        }
+        //    }
+        //}
         #endregion
         #endregion
 
