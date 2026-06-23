@@ -58,15 +58,33 @@ namespace EFCore.Entities
     #endregion
 
     #region 3. Fluent API
+    //internal class Employee
+    //{
+    //    public int Id { get; set; }
+    //    public string? Name { get; set; }
+    //    public double Salary { get; set; }
+    //    public int? Age { get; set; }
+    //}
+    #endregion
+
+    #endregion
+
+    #region RelationShip Mapping
     internal class Employee
     {
         public int Id { get; set; }
         public string? Name { get; set; }
         public double Salary { get; set; }
         public int? Age { get; set; }
-    }
-    #endregion
 
+        //[ForeignKey(nameof(Department))]
+        public int DepartmentDeptId { get; set; }
+        //[InverseProperty(nameof(Department.Employees))]
+        //public Department Department { get; set; }
+
+        //[InverseProperty(nameof(Department.Manger))]
+        //public Department? DepartmentToManage { get; set; }
+    } 
     #endregion
 
     public static class DbTypes

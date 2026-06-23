@@ -41,21 +41,21 @@ namespace EFCore
             //    ///CRUD
             //}
 
-            using CompanyDbContext dbContext = new CompanyDbContext();
+            //using CompanyDbContext dbContext = new CompanyDbContext();
 
-            Employee E01 = new Employee()
-            {
-                Name = "A",
-                Salary = 1000,
-                Age = 30
-            };
+            //Employee E01 = new Employee()
+            //{
+            //    Name = "A",
+            //    Salary = 1000,
+            //    Age = 30
+            //};
 
-            Employee E02 = new Employee()
-            {
-                Name = "B",
-                Salary = 4000,
-                Age = 27
-            };
+            //Employee E02 = new Employee()
+            //{
+            //    Name = "B",
+            //    Salary = 4000,
+            //    Age = 27
+            //};
 
 
             //dbContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
@@ -101,10 +101,56 @@ namespace EFCore
             //           //.Single();///top(2) ////linq query => select top(2) * from Employees where Id = 1
             //           .SingleOrDefault();///top(2) or null ////linq query => select top(2) * from Employees where Id = 1
             //Console.WriteLine($"Id: {Emp.Id}, Name: {Emp.Name}, Salary: {Emp.Salary}, Age: {Emp.Age}");
-
+            #endregion
+            #region Tracking vs notracking
+            //dbContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.TrackAll; ///default
+            //dbContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking; ///
+            //var result = dbContext.Employees.Where(emp => emp.Id == 1).AsTracking().FirstOrDefault();
+            //var result2 = dbContext.Employees.Where(emp => emp.Id == 1).AsNoTracking().FirstOrDefault();
+            ////var result2 = (from emp in dbContext.Employees
+            ////               where emp.Id == 1
+            ////               select emp);
+            //Console.WriteLine(dbContext.Entry(result).State);
+            //Console.WriteLine(dbContext.Entry(result2).State);
             #endregion
             #endregion
 
+            #region Update
+            //var result = dbContext.Employees.Where(e => e.Id == 1).FirstOrDefault();
+            //if (result is not null)
+            //{
+            //    Console.WriteLine(dbContext.Entry(result).State);
+            //    result.Name = "Updated Name";
+            //    Console.WriteLine(dbContext.Entry(result).State);
+            //    dbContext.Employees.Update(result);
+            //    Console.WriteLine(dbContext.Entry(result).State);
+            //    dbContext.SaveChanges();
+            //    Console.WriteLine(dbContext.Entry(result).State);
+            //}
+            #endregion
+
+            #region Delete
+            //var result = dbContext.Employees.Where(e => e.Id == 1).FirstOrDefault(); //db
+            //var result2 = dbContext.Employees.Find(1); // change trcker => local cache => db
+
+            //if (result is not null)
+            //{
+            //    Console.WriteLine(dbContext.Entry(result).State);
+            //    dbContext.Employees.Remove(result);
+            //    Console.WriteLine(dbContext.Entry(result).State);
+            //    dbContext.SaveChanges();
+            //    Console.WriteLine(dbContext.Entry(result).State);
+            //}
+            #endregion
+
+            #endregion
+
+            #region Mapping RealtionShip
+            //pk => fk
+            ///3. how to implment in code
+            ///       3.1 fk property [class name + pk name]
+            ///       3.2 Navigational property [class name]
+            ///       by default EF will use convention to map the relationship
             #endregion
         }
     }

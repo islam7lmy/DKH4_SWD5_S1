@@ -28,6 +28,23 @@ namespace EFCore.ConFigurations
             d.Property(d => d.CreationDate)
             .HasColumnType("date")
             .HasComputedColumnSql("GETDATE()");
+
+            //d.HasMany(d => d.Employees) //departement has many employees
+            //    .WithOne(e => e.Department) //employee has one department
+            //    .HasForeignKey(e => e.DepartmentDeptId) //foreign key in employee table
+            //    .OnDelete(DeleteBehavior.NoAction);
+
+
+            //d.HasOne(d=>d.Manger) //department has one manager
+            //    .WithOne(e=>e.DepartmentToManage) //employee manages one department
+            //    .HasForeignKey<Department>(d=>d.MangerId) //foreign key in department table
+            //    .OnDelete(DeleteBehavior.NoAction);
+
+            d.HasOne<Employee>()
+                .WithOne()
+                .HasForeignKey<Department>(d => d.MangerId)
+                .OnDelete(DeleteBehavior.NoAction);
+
         }
     }
 }
