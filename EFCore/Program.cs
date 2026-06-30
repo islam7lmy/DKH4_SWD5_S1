@@ -152,6 +152,78 @@ namespace EFCore
             ///       3.2 Navigational property [class name]
             ///       by default EF will use convention to map the relationship
             #endregion
+
+            #region Mapping Inhertince
+            using InheritanceDbContext dbContext = new InheritanceDbContext();
+            FullTime ftEmployee = new FullTime
+            {
+                Name = "FullTime Emp",
+                Age = 30,
+                Salary = 5000,
+                HiringDate = DateOnly.FromDateTime(DateTime.Now)
+            };
+
+            PartTime ptEmployee = new PartTime
+            {
+                Name = "PartTime Emp",
+                Age = 25,
+                HourRate = 50,
+                HourCount = 120
+            };
+            #region TPH
+            #region Two DBSet
+            //dbContext.FullTimePerson.Add(ftEmployee);
+            //dbContext.PartTimePerson.Add(ptEmployee);
+            //dbContext.SaveChanges();
+
+            //var FTPerson = from p in dbContext.FullTimePerson
+            //               select p;
+
+            //var PTPerson = from p in dbContext.PartTimePerson
+            //               select p;
+            #endregion
+
+            #region One DBSet
+            //dbContext.Persons.Add(ftEmployee);
+            //dbContext.Persons.Add(ptEmployee);
+            //dbContext.SaveChanges();
+
+            //var persons = from Person in dbContext.Persons
+            //              select Person;
+
+            //Console.WriteLine("*****************Persons******************");
+            //foreach (var item in persons)
+            //{
+            //    Console.WriteLine($"FullTime Employee:{item.Name}, Type: {item.GetType().Name}");
+            //}
+
+            //var fulltimeemployees = from Person in dbContext.Persons.OfType<FullTime>()
+            //              select Person;
+
+            //Console.WriteLine("*****************fulltime******************");
+            //foreach (var item in fulltimeemployees)
+            //{
+            //    Console.WriteLine($"FullTime Employee:{item.Name}, Salary: {item.Salary}");
+            //}
+
+            //var parttimeemployees = from Person in dbContext.Persons.OfType<PartTime>()
+            //                        select Person;
+            //Console.WriteLine("*****************parttime******************");
+            //foreach (var item in parttimeemployees)
+            //{
+            //    Console.WriteLine($"FullTime Employee:{item.Name}, Hour rate: {item.HourRate}");
+            //}
+            #endregion
+
+            #endregion
+
+            #region TPT
+            //dbContext.FullTimePersons.Add(ftEmployee);
+            //dbContext.PartTimePersons.Add(ptEmployee);
+            //dbContext.SaveChanges();
+            #endregion
+
+            #endregion
         }
     }
 }
